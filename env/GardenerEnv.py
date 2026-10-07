@@ -286,6 +286,8 @@ class GardenerEnv(gym.Env):
                             dist[nx, ny] = dist[x, y] + 1
                             if dist[nx, ny] == 1:
                                 best[nx, ny] = np.array([0, 0], dtype=np.int8)
+                            else:
+                                best[nx, ny] = np.array([-dx, -dy], dtype=np.int8)
                             q.append((nx, ny))
 
             lake_dist.append(dist)
